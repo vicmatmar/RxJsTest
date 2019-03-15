@@ -1,0 +1,18 @@
+<div *ngIf="displayTodos && displayTodos.length > 0">
+    <label>Id Filter:
+  <input [(ngModel)]="filterTxt">
+</label>
+<button (click)='filterData()'>Filter</button>
+</div>
+
+<div *ngIf="displayTodos.length > 0; else noTodosDiv">
+  <code>
+  <pre>{{displayTodos |json}}</pre>
+  </code>
+</div>
+
+<ng-template #noTodosDiv>
+  <div>
+    No items
+  </div>
+</ng-template>
